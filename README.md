@@ -1,7 +1,7 @@
-- 👋 Hi, I’m @ParsaPouramiri8
-- 👀 I’m interested in Programming
-- 🌱 I’m currently learning Python For AI
-- 💞️ I’m looking to collaborate on Write code wherever you can
-- 📫 How to reach me With Gmail, Instagram
-- 😄 Pronouns: he/his
-- ⚡ Fun fact: In my school i have just 1.5 time for The most important lesson in the world Math 🤣
+- 👋 Hi, I’m @ParsaPouramiri8.
+- 👀 I’m interested in Programming.
+- 🌱 I’m currently learning Python For AI.
+- 💞️ I want to create something that lets you code wherever you want.
+- 📫 How to reach me whit Gmail, Instagram.
+- 😄 Pronouns: he/his.
+- ⚡ Fun fact: In my school i have just 1.5 time for The most important lesson in the world (Math). 🤣
