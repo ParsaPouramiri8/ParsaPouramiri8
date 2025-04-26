@@ -1,4 +1,4 @@
-### 👋 Hi there, I'm [Your Name]!
+### 👋 Hi there, I'm Parsa Pouramiri!
 
 I'm a passionate **developer** who loves building cool stuff with **code**! 🚀
 Currently a student at **Sampad** and deeply interested in **Artificial Intelligence 🤖**, **Web Development 🌐**, and **Creative Tech 🎨**.
@@ -40,4 +40,7 @@ Currently a student at **Sampad** and deeply interested in **Artificial Intellig
 
 ---
 
-> "Keep coding, keep shining! 🌟"
+> "I am determined, if destiny allows,
+to undertake a deed that will bring all sorrows to an end"
+> "بر سر آنم که گر ز دست برآید
+دست به کاری زنم که غصه سر آید"
