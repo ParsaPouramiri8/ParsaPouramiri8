@@ -1,9 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/yourimage.jpg" alt="Coding Solo" width="600" />
+  <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" alt="Solo Coder" width="100%" />
 </p>
 
-<p align="center"><b>Keep coding, keep rocking! 🚀🔥</b></p>
-
+<p align="center"><b>Fueling dreams, one line of code at a time... 🚀</b></p>
 
 ### 👋 Hi there, I'm Parsa Pouramiri!
 
@@ -25,9 +24,9 @@ Deeply fascinated by **Artificial Intelligence 🤖**, **Web Development 🌐**,
 
 ### 📂 Featured Projects
 
-- 
-- 
-- 
+- 🚀 [Awesome Python Automation](#)
+- 🌟 [AI-Powered Web Application](#)
+- 🎨 [Creative Frontend Designs](#)
 
 ---
 
