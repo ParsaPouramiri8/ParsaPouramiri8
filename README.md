@@ -18,9 +18,9 @@ Deeply fascinated by **Artificial Intelligence 🤖**, **Web Development 🌐**,
 
 ### 📂 Featured Projects
 
-- 🚀 [Awesome Python Automation](#)
-- 🌟 [AI-Powered Web Application](#)
-- 🎨 [Creative Frontend Designs](#)
+- 
+- 
+- 
 
 ---
 
@@ -40,8 +40,6 @@ Deeply fascinated by **Artificial Intelligence 🤖**, **Web Development 🌐**,
 
 ---
 
-> "I am determined, if destiny allows,"
-> "to undertake a deed that will bring all sorrows to an end."
+> "I am determined, if destiny allows,\n> to undertake a deed that will bring all sorrows to an end."
 > 
-> "بر سر آنم که گر ز دست برآید
->  دست به کاری زنم که غصه سر آید"
+> "بر سر آنم که گر ز دست برآید\n> دست به کاری زنم که غصه سر آید"
