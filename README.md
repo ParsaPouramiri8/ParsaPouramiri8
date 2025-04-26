@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Coding GIF" width="500" />
+</p>
+
 ### 👋 Hi there, I'm Parsa Pouramiri!
 
 I'm a passionate **developer** who loves crafting amazing projects with **code**! 🚀
