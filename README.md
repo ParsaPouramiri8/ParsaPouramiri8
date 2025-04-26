@@ -1,7 +1,7 @@
 ### 👋 Hi there, I'm Parsa Pouramiri!
 
-I'm a passionate **developer** who loves building cool stuff with **code**! 🚀
-Currently a student at **Sampad** and deeply interested in **Artificial Intelligence 🤖**, **Web Development 🌐**, and **Creative Tech 🎨**.
+I'm a passionate **developer** who loves crafting amazing projects with **code**! 🚀
+Deeply fascinated by **Artificial Intelligence 🤖**, **Web Development 🌐**, and the endless creativity of **Technology 🎨**.
 
 ---
 
@@ -18,9 +18,9 @@ Currently a student at **Sampad** and deeply interested in **Artificial Intellig
 
 ### 📂 Featured Projects
 
-- 
-- 
-- 
+- 🚀 [Awesome Python Automation](#)
+- 🌟 [AI-Powered Web Application](#)
+- 🎨 [Creative Frontend Designs](#)
 
 ---
 
@@ -40,8 +40,6 @@ Currently a student at **Sampad** and deeply interested in **Artificial Intellig
 
 ---
 
-> "I am determined, if destiny allows,
-to undertake a deed that will bring all sorrows to an end"
-> ---
-> "بر سر آنم که گر ز دست برآید
-دست به کاری زنم که غصه سر آید"
+> "I am determined, if destiny allows,\n> to undertake a deed that will bring all sorrows to an end."
+> 
+> "بر سر آنم که گر ز دست برآید\n> دست به کاری زنم که غصه سر آید"
