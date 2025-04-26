@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" alt="Excited Coding" width="350" />
+  <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" alt="Solo Coder" width="100%" />
 </p>
+
 <p align="center"><b>Keep coding, keep rocking! 🚀🔥</b></p>
 
 
