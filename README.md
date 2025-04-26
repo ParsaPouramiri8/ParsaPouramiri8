@@ -40,7 +40,8 @@ Deeply fascinated by **Artificial Intelligence 🤖**, **Web Development 🌐**,
 
 ---
 
-> "I am determined, if destiny allows,\n> to undertake a deed that will bring all sorrows to an end."
+> "I am determined, if destiny allows,"
+> "to undertake a deed that will bring all sorrows to an end."
 > 
 > "بر سر آنم که گر ز دست برآید
 >  دست به کاری زنم که غصه سر آید"
