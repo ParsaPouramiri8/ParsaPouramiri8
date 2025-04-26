@@ -18,9 +18,9 @@ Currently a student at **Sampad** and deeply interested in **Artificial Intellig
 
 ### 📂 Featured Projects
 
-- 🎮 [Cool Python Game](#)
-- 🌟 [AI Powered Website](#)
-- 🛒 [E-commerce Web Design](#)
+- 
+- 
+- 
 
 ---
 
@@ -42,5 +42,6 @@ Currently a student at **Sampad** and deeply interested in **Artificial Intellig
 
 > "I am determined, if destiny allows,
 to undertake a deed that will bring all sorrows to an end"
+> ---
 > "بر سر آنم که گر ز دست برآید
 دست به کاری زنم که غصه سر آید"
