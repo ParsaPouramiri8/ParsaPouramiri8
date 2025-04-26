@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" alt="Solo Coder" width="100%" />
+  <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/yourimage.jpg" alt="Coding Solo" width="600" />
 </p>
 
 <p align="center"><b>Keep coding, keep rocking! 🚀🔥</b></p>
