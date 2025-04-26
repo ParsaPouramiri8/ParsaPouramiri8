@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" alt="Solo Coder" width="100%" />
+  <img src="/mnt/data/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f336f37544b746e75484f4848556a523338592f67697068792e676966.gif" alt="Solo Coder" width="500" />
 </p>
 
 <p align="center"><b>Fueling dreams, one line of code at a time... 🚀</b></p>
