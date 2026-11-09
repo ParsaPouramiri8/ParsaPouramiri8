@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/profile.svg" alt="Parsa Pouramiri — AI and Data, Python Developer, Software Engineering" width="1815" />
+  <img src="assets/profile.svg" alt="Parsa Pouramiri — AI and Data, Python Developer, Software Engineering" width="1000" />
 </p>
 
 <details>

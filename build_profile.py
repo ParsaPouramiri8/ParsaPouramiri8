@@ -1,6 +1,5 @@
 """Standard-library-only SVG renderer and public GitHub stats collector."""
 import argparse
-import base64
 import calendar
 import json
 import os
@@ -79,67 +78,79 @@ def collect(username):
         'updated_at':datetime.now(ZoneInfo('UTC')).isoformat(),'complete':True}
 
 def render(c,s,today):
-    parts=['''<svg xmlns="http://www.w3.org/2000/svg" width="1815" height="855" viewBox="0 0 1815 855" role="img" aria-labelledby="title desc">
-<title id="title">Parsa Pouramiri — developer profile</title>
-<desc id="desc">Personal profile with age and public GitHub statistics. See README for counting scope.</desc>
-<rect width="1815" height="855" rx="16" fill="#171c23"/>
-<g transform="translate(535 0)">
-<g font-family="DejaVu Sans Mono,Consolas,monospace" font-size="22">''']
-    def text(x,y,value,color='#a9c9dd',size=22,extra=''):
+    # Reference-style compact neofetch card: real monospace text throughout.
+    bg='#161b22'; fg='#afd7ff'; orange='#ffaf5f'; muted='#5f87af'
+    parts=['''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="465" viewBox="0 0 1000 465" role="img" aria-labelledby="title desc">
+<title id="title">Parsa Pouramiri</title>
+<desc id="desc">ASCII head portrait and developer profile. Public GitHub statistics; scope explained in README.</desc>
+<rect width="1000" height="465" rx="15" fill="#161b22"/>
+<g font-family="'Liberation Mono','Courier New',monospace" font-size="14.5" font-weight="400">''']
+    def text(x,y,value,color=fg,size=14.5,extra=''):
         parts.append(f'<text x="{x}" y="{y}" fill="{color}" font-size="{size}" {extra}>{escape(str(value))}</text>')
-    def dots(x1,x2,y):
-        if x2>x1: parts.append(f'<path d="M{x1} {y-3}H{x2}" stroke="#46505c" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 12"/>')
-    def row(label,value,y,size=22):
-        # Keep the leaders out of both text runs; monospace sizing is deterministic.
-        text(44,y,label+':','#ca946a',size)
-        dots(44+(len(label)+1)*size*.603+16,1235-len(str(value))*size*.603-16,y)
-        text(1235,y,value,size=size,extra='text-anchor="end"')
-    def heading(label,y):
-        text(20,y,'·','#626d78')
-        text(44,y,label,'#c6ccd2',24)
-        parts.append(f'<path d="M{64+len(label)*14.5} {y-6}H1235" stroke="#a0a9b2" stroke-width="1.4"/>')
-    heading(c['name'],43)
+    def leader(x1,x2,y):
+        # Actual periods match the terminal reference more closely than dashed lines.
+        count=int((x2-x1)/8.7)
+        if count>0: text(x1,y,'.'*count,muted)
+    left=350; right=983
+    def row(label,value,y):
+        text(left-16,y,'.',muted)
+        text(left,y,label+':',orange)
+        value=str(value)
+        size=14.5
+        # Long user-entered contacts fit without colliding with their label.
+        available=right-left-(len(label)+1)*8.7-17.4
+        size=min(size,available/(max(1,len(value))*.6))
+        leader(left+(len(label)+1)*8.7+8.7,right-len(value)*size*.6-8.7,y)
+        text(right,y,value,size=size,extra='text-anchor="end"')
+    def heading(label,y,first=False):
+        x=left-16
+        text(x,y,('' if first else '- ')+label)
+        start=x+(len(label)+(0 if first else 2))*8.7+10
+        parts.append(f'<path d="M{start} {y-4}H{right}" stroke="#b9c6d2" stroke-width="0.7"/>')
+    heading(c['name'],27,True)
     a=age(date.fromisoformat(c['birthdate']),today)
-    rows=[('OS',c['os']),('Uptime',f'{a[0]} years, {a[1]} months, {a[2]} days'),('Host',c['host']),('Kernel',c['kernel']),('IDE',c['ide'])]
-    for i,(label,value) in enumerate(rows): row(label,value,87+i*34)
-    for i,(label,key) in enumerate([('Languages.Programming','programming'),('Languages.Computer','computer'),('Languages.Real','spoken')]): row(label,c[key],287+i*34)
-    row('Hobbies.Software',c['software'],416)
-    row('Hobbies.Hardware',c['hardware'],450,21)
-    heading('Contact',509)
-    row('Email.Personal',c['email'],549)
-    row('LinkedIn',c['linkedin'],583)
-    heading('GitHub Stats',647)
-    def number(key):
-        return f'{s[key]:,}' if s.get(key) is not None else '—'
-    # Two aligned columns as in the reference, with a compact contributed count.
-    def stat(label,value,x,y,right):
-        text(x,y,label+':','#ca946a',21)
-        dots(x+(len(label)+1)*12.66+14,right-len(value)*12.66-14,y)
-        text(right,y,value,size=21,extra='text-anchor="end"')
-    stat('Repos',number('repos'),44,687,290)
-    text(312,687,'{Contributed: '+number('contributed')+'}', '#a9c9dd',21)
-    text(782,687,'|','#7b8793')
-    stat('Stars',number('stars'),815,687,1235)
-    stat('Commits',number('commits'),44,723,751)
-    text(782,723,'|','#7b8793')
-    stat('Followers',number('followers'),815,723,1235)
-    text(44,760,'Lines of Code on GitHub:','#ca946a',21)
-    dots(355,545,760)
-    text(570,760,number('net_lines'),size=21)
-    text(785,760,'(', '#b9c3cd',21)
-    text(810,760,number('additions')+'++','#78b77a',21)
-    text(1040,760,number('deletions')+'--','#d4777c',21)
-    text(1235,760,')','#b9c3cd',21,'text-anchor="end"')
-    updated=s.get('updated_at','')
-    note=('Stats updated: '+updated[:10]) if s.get('complete') else 'Stats pending first complete GitHub Actions run'
-    text(44,808,note,'#788592',14)
-    text(1235,808,'Public repos · counting scope in README','#788592',14,'text-anchor="end"')
-    parts.append('</g></g>')
-    portrait = ROOT / 'assets' / 'portrait.png'
-    if portrait.exists():
-        encoded = base64.b64encode(portrait.read_bytes()).decode('ascii')
-        parts.append(f'<image x="24" y="95" width="500" height="665" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{encoded}"/>')
-    parts.append('</svg>')
+    values=[('OS',c['os']),('Uptime',f'{a[0]} years, {a[1]} months, {a[2]} days'),('Host',c['host']),('Kernel',c['kernel']),('IDE',c['ide'])]
+    for i,(label,value) in enumerate(values): row(label,value,47+i*18)
+    for i,(label,key) in enumerate([('Languages.Programming','programming'),('Languages.Computer','computer'),('Languages.Real','spoken')]): row(label,c[key],155+i*18)
+    row('Hobbies.Software',c['software'],227)
+    row('Hobbies.Hardware',c['hardware'],245)
+    heading('Contact',281)
+    row('Email.Personal',c['email'],299)
+    row('LinkedIn',c['linkedin'],317)
+    heading('GitHub Stats',371)
+    def num(key): return f'{s[key]:,}' if s.get(key) is not None else '—'
+    def stat(label,value,x,y,end):
+        text(x,y,label+':',orange)
+        leader(x+(len(label)+1)*8.7+8.7,end-len(value)*8.7-8.7,y)
+        text(end,y,value,extra='text-anchor="end"')
+    text(left-16,389,'.',muted)
+    text(left,389,'Repos:',orange)
+    text(left+86,389,num('repos'))
+    cx=left+126
+    text(cx,389,'{Contributed:',orange)
+    text(cx+122,389,num('contributed')+'}')
+    text(752,389,'|')
+    stat('Stars',num('stars'),770,389,right)
+    text(left-16,407,'.',muted)
+    stat('Commits',num('commits'),left,407,733)
+    text(752,407,'|')
+    stat('Followers',num('followers'),770,407,right)
+    text(left-16,425,'.',muted)
+    # Text runs pack the last line with the reference's green/red counters.
+    label='Lines of Code on GitHub: '
+    runs=[(label,orange),(num('net_lines')+' ( ',fg),(num('additions')+'++', '#87d787'),(', ',fg),(num('deletions')+'--','#ff5f5f'),(' )',fg)]
+    total=sum(len(v) for v,col in runs)
+    size=min(14.5,(right-left)/(total*.6))
+    x=left
+    for value,color in runs:
+        text(x,425,value,color,size)
+        x+=len(value)*size*.6
+    portrait=(ROOT/'assets/portrait.txt').read_text(encoding='utf-8').splitlines()
+    parts.append('<g transform="translate(4 40) scale(1.10 0.85)">')
+    for i,line in enumerate(portrait):
+        text(8,28+i*13.6,line,'#bfdcff',15.2,'xml:space="preserve"')
+    parts.append('</g>')
+    parts.append('</g></svg>')
     (ROOT/'assets').mkdir(exist_ok=True)
     (ROOT/'assets/profile.svg').write_text('\n'.join(parts),encoding='utf-8')
 
